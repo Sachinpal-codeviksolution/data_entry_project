@@ -1,0 +1,45 @@
+<%-include('.././partials/header')%>
+<%-include('navbar')%>
+
+
+  <div class="m-3">
+    <h4>Filter</h4>
+    <a href="/superadmin/dashboard?type=All"><button>All</button></a>
+    <a href="/superadmin/dashboard?type=Staff"><button>Staff</button></a>
+    <a href="/superadmin/dashboard?type=User"><button>User</button></a>
+  </div>
+
+  <table class="table m-3">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col" colspan="2" class="text-center">Action</th>
+    
+
+      </tr>
+    </thead>
+    <tbody>
+      <%for (let item of data){%>
+        <tr>
+          <td>
+            <%=item.name%>
+          </td>
+          <td><b>
+              <%=item.type%>
+            </b></td>
+          <td>
+            <form action="/superadmin/delete/<%=item._id%>?_method=DELETE" method="POST"><a
+                href="/superadmin/delete"><button type="submit"><i class="fa fa-trash-o"
+                    aria-hidden="true"></i></button></a></form>
+          </td>
+          <td>
+            <a href="/superadmin/update/<%=item._id%>"><button><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
+          </td>
+        </tr>
+        <%}%>
+
+    </tbody>
+  </table>
+
+  <%-include('.././partials/footer')%>

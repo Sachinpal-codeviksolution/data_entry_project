@@ -1,0 +1,38 @@
+<%-include('.././partials/header')%>
+<%-include('navbar')%>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S no.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col" colspan="2" class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for (let item of data){%>
+        <tr>
+          <th scope="row">1</th>
+          <td>
+            <%=item.name%>
+          </td>
+          <td><b>
+              <%=item.email%>
+            </b></td>
+          <td>
+            <form action="/staff/delete/<%=item._id%>?_method=DELETE" method="POST"><a
+                href="/staff/delete"><button type="submit"><i class="fa fa-trash-o"
+                    aria-hidden="true"></i></button></a></form>
+          </td>
+          <td>
+            <a href="/staff/update/<%=item._id%>"><button><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
+          </td>
+        </tr>
+        <%}%>
+
+    </tbody>
+  </table>
+
+
+<%-include('.././partials/footer')%>

@@ -1,0 +1,28 @@
+<%-include('.././partials/header')%>
+    <%-include('navbar')%>
+
+        <div class="container mt-5 mb-4">
+            <h2 class="text-center mb-4">Login</h2>
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <!-- Registration Form -->
+                    <form id="registrationForm" action="/superadmin/login" method="POST">
+                        <div class="mb-3 form-group">
+                            <label class="mb-2" for="email">Email address</label>
+                            <input type="email" class="form-control form-control-sm" id="email"
+                                placeholder="Enter your email" name="email">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label class="mb-2" for="password">Password</label>
+                            <input type="password" class="form-control form-control-sm" id="password"
+                                placeholder="Enter your passsword" name="password">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="d-block btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%-include('.././partials/footer')%>

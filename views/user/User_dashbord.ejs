@@ -1,0 +1,20 @@
+<%-include('.././partials/header')%>
+    <%-include('navbar')%>
+
+       <div class="m-4">
+        <p>Name: <b><%=person.name%></b></p>
+        <p>Phone: <b><%=person.phone%></b></p>
+        <p>Email: <b><%=person.email%></b></p>
+        <p>ID Type: <b><%=person.id%></b></p>
+        <p>ID Value: <b><%=person.idValue%></b></p>
+        <h3>Bank Details</h3>
+        <p>Account Name: <b><%=person.AC_name%></b></p>
+        <p>Bank Name: <b><%=person.AC_bank%></b></p>
+        <p>Account Number: <b><%=person.AC_number%></b></p>
+        <p>IFSC Code : <b><%=person.AC_ifsc%></b></p>
+        <p>Branch: <b><%=person.AC_branch%></b></p>
+        <p>Address: <b><%=person.AC_address%></b></p>
+       </div>
+       <p class="mt-4"><a href="/user/update/<%=person._id%>"><button>Update profile </button></a></p>
+
+        <%-include('.././partials/footer')%>

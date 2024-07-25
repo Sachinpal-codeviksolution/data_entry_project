@@ -1,0 +1,112 @@
+<%-include('.././partials/header')%>
+<%-include('navbar')%>
+
+
+
+  <!-- form -->
+
+  <div class="container mt-5 mb-4">
+    <h2 class="text-center mb-4">Update profile</h2>
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <!-- Registration Form -->
+            <form id="registrationForm" action="/user/update/<%=person._id%>?_method=PATCH
+            " method="POST">
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="name">Name</label>
+                    <input type="text" class="form-control form-control-sm" id="name"
+                        name="name" value="<%=person.name%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="email">Email address</label>
+                    <input type="email" class="form-control form-control-sm" id="email"
+                        name="email" value="<%=person.email%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="phone">Phone number</label>
+                    <input type="text" class="form-control form-control-sm" id="phone"
+                         name="phone" value="<%=person.phone%>">
+                </div>
+                <!-- <div class="mb-3 form-group">
+                    <label class="mb-2" for="password">username </label>
+                    <input type="text" class="form-control form-control-sm" id="username"
+                         name="username">
+                </div>    -->
+                <!-- <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Signature</label>
+                    <input type="file" class="form-control form-control-sm" id="id"
+                         name="id">
+                </div> -->
+                <!-- <div class="mb-3">
+                    <div class="dropdown dropend">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" name="id">
+                            Select Your id proof
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button" value="Aadhar card">Aadhar card</button></li>
+                            <li><button class="dropdown-item" type="button" value="Pan card">Pan card</button></li>
+                            <li><button class="dropdown-item" type="button" value="Driving License">Driving License</button></li>
+                            <li><button class="dropdown-item" type="button" value="voter ID card">voter ID card</button></li>
+
+                        </ul>
+                    </div>
+                    <input type="hidden" id="type" name="type" value="">
+                </div> -->
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Selected Id Number</label>
+                    <input type="text" class="form-control form-control-sm" id="idValue"
+                     name="idValue">
+                </div>
+                <h3>Bank details</h3>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Account Name</label>
+                    <input type="text" class="form-control form-control-sm" id="accountName"
+                        name="AC_name" value="<%=person.AC_name%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Bank Name</label>
+                    <input type="text" class="form-control form-control-sm" id="bankName"
+                        name="AC_bank" value="<%=person.AC_bank%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Account Number</label>
+                    <input type="text" class="form-control form-control-sm" id="AC_no"
+                        name="AC_number" value="<%=person.AC_number%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">IFSC</label>
+                    <input type="text" class="form-control form-control-sm" id="ifsc"
+                         name="AC_ifsc" value="<%=person.AC_ifsc%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Branch</label>
+                    <input type="text" class="form-control form-control-sm" id="branch"
+                         name="AC_branch" value="<%=person.AC_branch%>">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="text">Bank Address</label>
+                    <input type="text" class="form-control form-control-sm" id="bankAddress"
+                         name="AC_address" value="<%=person.AC_address%>">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="d-block btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.getElementById('type').value = this.value;
+        document.querySelector('.dropdown-toggle').textContent = this.textContent;
+    });
+});
+
+</script>
+  
+    
+        <%-include('.././partials/footer')%>
+
+<%-include('.././partials/footer')%>

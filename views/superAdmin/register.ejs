@@ -1,0 +1,76 @@
+<%-include('.././partials/header')%>
+<%-include('navbar')%>
+
+
+  <!-- form -->
+
+  <div class="container mt-5 mb-4">
+    <h2 class="text-center mb-4">New Registration</h2>
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <!-- Registration Form -->
+            <form id="registrationForm" action="/superadmin/register
+            " method="POST">
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="name">Name</label>
+                    <input type="text" class="form-control form-control-sm" id="name"
+                        placeholder="Enter your name" name="name">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="email">Email address</label>
+                    <input type="email" class="form-control form-control-sm" id="email"
+                        placeholder="Enter your email" name="email">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="phone">Phone number</label>
+                    <input type="text" class="form-control form-control-sm" id="phone"
+                        placeholder="Enter your phone number" name="phone">
+                </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="password">Password</label>
+                    <input type="password" class="form-control form-control-sm" id="password"
+                        placeholder="Enter your passsword" name="password">
+                </div>
+                <div class="mb-3 form-group">
+                  <label class="mb-2" for="password">Confirm Password</label>
+                  <input type="password" class="form-control form-control-sm" id="password"
+                      placeholder="Enter your passsword" name="password_confirmation">
+              </div>
+                <div class="mb-3 form-group">
+                    <label class="mb-2" for="password">username </label>
+                    <input type="text" class="form-control form-control-sm" id="username"
+                        placeholder="Enter username " name="username">
+                </div>
+                <div class="mb-3">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" name="type">
+                            Type
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button" value="Staff">Staff</button></li>
+                            <li><button class="dropdown-item" type="button" value="User">User</button></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" id="type" name="type" value="">
+                </div>
+                
+                <div class="mb-3">
+                    <button type="submit" class="d-block btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.getElementById('type').value = this.value;
+        document.querySelector('.dropdown-toggle').textContent = this.textContent;
+    });
+});
+
+</script>
+  
+    
+        <%-include('.././partials/footer')%>
